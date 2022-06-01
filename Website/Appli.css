@@ -1,32 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    border-bottom: 1px solid #000000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000000;
+}
+
+.nav-link:hover {
+    color: #009dff;
+}
+button{
+    width: 150px;
+    height: 30px;
+    color: black;
+    background-color:beige;
+    cursor: pointer;
+}
+
 body {
-    background-color:rgb(254, 254, 254);
+    background-image:url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
 }
 h1{
     text-align: center;
+    margin-bottom: 60px;
+    font-size:xx-large;
 }
-
-button{
-    background-color: rgb(0, 151, 174);
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    top: 80px;
-    left: 1010px;
-    top: 15px;
-    cursor: pointer;
+p{
+    font-size: 14px
 }
 picture{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-memorybutton{
-    background-color: rgb(0, 151, 174);
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    top: 10px;
-    left: 510px;
-    top: 15px;
-    cursor: pointer;
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.container .image {
+    margin: 16px;
+}
+.container .text {
+    margin: 16px;
+}
+.container-reverse {
+    flex-direction: row-reverse;
 }
