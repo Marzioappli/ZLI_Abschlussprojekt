@@ -1,4 +1,4 @@
-import { ctx } from "../canvas.js";
+import { ctx } from "Game/canvas.js";
 
 export class Rectangle{
     constructor(options){
