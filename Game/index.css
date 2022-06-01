@@ -1,21 +1,7 @@
-* {
-
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-
-}
-body{
-    background-color: black;
-    font-family: 'Courier New', Courier, monospace;
-    color: aliceblue;
-}
-main{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#canvas{
-    background-color: aliceblue;
-}
+.quadrat {
+	width: 300px;
+	height: 300px;
+	margin:5000px;
+	border: 8px solid rgb(136, 190, 218);
+    background-color: blue;
+    }
