@@ -1,7 +1,5 @@
-.quadrat {
-	width: 300px;
-	height: 300px;
-	margin:5000px;
-	border: 8px solid rgb(136, 190, 218);
-    background-color: blue;
-    }
+.quadrat{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(0, 162, 255);
+}
