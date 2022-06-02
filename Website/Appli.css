@@ -62,12 +62,19 @@ button{
 }
 
 body {
-    background-image:url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
+    background-image:url("https://background-tiles.com/overview/blue/textures/large/5030.png");
 }
 h1{
     text-align: center;
     margin-bottom: 60px;
     font-size:xx-large;
+    color: rgb(0, 0, 0);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+li{
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 p{
     font-size: 14px

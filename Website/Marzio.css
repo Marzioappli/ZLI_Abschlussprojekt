@@ -45,7 +45,7 @@
 
     h1 {
         text-align: center;
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         margin-bottom: 90px;
         font-size:xx-large;
     }
@@ -57,7 +57,7 @@
     }
 
     body {
-        background-image: url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
+        background-image: url("https://background-tiles.com/overview/blue/patterns/large/1047.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -66,7 +66,11 @@
     body {
         align-items: center;
     }
-
+    li{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
     button{
         width: 150px;
         height: 30px;
@@ -74,43 +78,14 @@
         background-color:beige;
         cursor: pointer;
     }
-    TVT {
+    .img{
+        position: absolute;
+        top: 200px;
+        bottom: 100px;
+        left: 10px;
+        right: 10px;
+        margin: auto;
         display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    img2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    img3{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 490px;
-    }
-    Text1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    Trikot{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 990px;
-    }
-    .links {
-        align-items: center;
-        float: left;
-        margin-right: 10px;
-    }
+        justify-content: space-around;
+        }
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1.1fr 0.9fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-    }

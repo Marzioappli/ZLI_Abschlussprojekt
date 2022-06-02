@@ -83,7 +83,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+img{
+    float: right;
+}
 
 .moin {
 	width: 300px;
