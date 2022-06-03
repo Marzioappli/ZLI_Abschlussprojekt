@@ -35,8 +35,7 @@
     text-align: center;
 }
 body {
-    background-image: url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
-    background-position: center;
+    background-color: greenyellow;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -48,5 +47,15 @@ button{
     cursor: pointer;
     position: relative;
     top: -380px;
-    left: 1100px;
+    left: 600px;
+}
+button1{
+    width: 150px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(4, 0, 255);
+    cursor: pointer;
+    position: relative;
+    top: -30px;
+    left: 300px;
 }

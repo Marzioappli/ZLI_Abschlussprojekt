@@ -11,7 +11,7 @@ class Player {
             x: 230,
             y: 10
         }
-        this.velocity = {
+        this.tempo = {
             x:0,
             y:0
         }
@@ -25,12 +25,12 @@ class Player {
     }
     update() { //update function
         this.draw()
-        this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
+        this.position.x += this.tempo.x
+        this.position.y += this.tempo.y
 
-        if(this.position.y + this.height + this.velocity.y <= canvas.height)
-        this.velocity.y += gravity
-        else this.velocity.y = 0
+        if(this.position.y + this.height + this.tempo.y <= canvas.height)
+        this.tempo.y += gravity
+        else this.tempo.y = 0
     }
 }
 
@@ -67,18 +67,26 @@ function animate() {
     player.update()
     plattform.draw()
 
-    if(keys.rechts.pressed) {
-        player.velocity.x = 5
-    }else if (keys.links.pressed) {
-        player.velocity.x = -5
-    }else player.velocity.x = 0
+    if(keys.rechts.pressed && player.position.x < 500) {
+        player.tempo.x = 5
+    }else if (keys.links.pressed && player.position.x > 100) {
+        player.tempo.x = -5
+    }else {
+        player.tempo.x = 0
+
+        if (keys.rechts.pressed) {
+            plattform.position.x -= 5
+        }else if (keys.links.pressed) {
+            plattform.position.x += 5
+        }
+    }
 
     //plattform collision detection
     if (player.position.y + player.height <= plattform.position.y
-        && player.position.y + player.height + player.velocity.y >= plattform.position.y
+        && player.position.y + player.height + player.tempo.y >= plattform.position.y
         && player.position.x + player.width >= plattform.position.x
         && player.position.x <= plattform.position.x + plattform.width) {// && = add statement (conditional)
-        player.velocity.y = 0
+        player.tempo.y = 0
     }
 }
 animate()
@@ -91,7 +99,7 @@ addEventListener('keydown', ({ keyCode }) => {
             break
         case 38:
             console.log('oben')
-            player.velocity.y -= 7
+            player.tempo.y -= 7
             break
         case 39:
             console.log('rechts')
@@ -110,7 +118,7 @@ addEventListener('keyup', ({ keyCode }) => {
             break
         case 38:
             console.log('oben')
-            player.velocity.y -= 10
+            player.tempo.y -= 10
             break
         case 39:
             console.log('rechts')

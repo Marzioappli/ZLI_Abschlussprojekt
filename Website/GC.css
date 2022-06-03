@@ -37,3 +37,14 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+button{
+  width: 150px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background-color:#0077ff;
+  cursor: pointer;
+  position: relative;
+  top: -380px;
+  left: 1100px;
+}
