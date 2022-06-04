@@ -8,7 +8,7 @@ const gravity = 1
 class Player {
     constructor() {
         this.position = {
-            x: 230,
+            x: 90,
             y: 10
         }
         this.tempo = {
@@ -19,7 +19,7 @@ class Player {
         this.height = 45
     }
     draw() { //draw function
-        c.fillStyle ='pink'
+        c.fillStyle ='white'
         c.fillRect(this.position.x, this.position.y,
             this.width, this.height)
     }
@@ -35,21 +35,24 @@ class Player {
 }
 
 class Plattform {
-    constructor() {
+    constructor({x, y}) {
         this.position = {
-            x: 200,
-            y: 300
+            x: x,
+            y: y
         }
         this.width = 190
         this.height = 30
     }
     draw() {
-        c.fillStyle = "purple"
+        c.fillStyle = "darkgreen"
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
 const player = new Player()
-const plattform = new Plattform()
+const platforms = [new Plattform({x: 90, y: 500}),
+    new Plattform({x: 500, y: 400 }), new Plattform({x: 800, y: 280 }),  new Plattform({x: 1120, y: 280 })
+    ,  new Plattform({x: 1520, y: 500 }), new Plattform({x: 1720, y: 400 }), new Plattform({x: 1900, y: 280 }), new Plattform({x: 2200, y: 200 }),
+    new Plattform({x: 2600, y: 450 })]
 const keys = {
     rechts: {
         pressed: false
@@ -65,7 +68,9 @@ function animate() {
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height)
     player.update()
-    plattform.draw()
+    platforms.forEach(plattform => {
+        plattform.draw()
+    })
 
     if(keys.rechts.pressed && player.position.x < 500) {
         player.tempo.x = 5
@@ -75,19 +80,26 @@ function animate() {
         player.tempo.x = 0
 
         if (keys.rechts.pressed) {
-            plattform.position.x -= 5
+            platforms.forEach(plattform => {
+                plattform.position.x -= 5
+            })
+
         }else if (keys.links.pressed) {
-            plattform.position.x += 5
+            platforms.forEach(plattform => {
+                plattform.position.x += 5
+            })
         }
     }
 
     //plattform collision detection
+    platforms.forEach(plattform => {
     if (player.position.y + player.height <= plattform.position.y
         && player.position.y + player.height + player.tempo.y >= plattform.position.y
         && player.position.x + player.width >= plattform.position.x
         && player.position.x <= plattform.position.x + plattform.width) {// && = add statement (conditional)
         player.tempo.y = 0
     }
+})
 }
 animate()
 
@@ -129,3 +141,4 @@ addEventListener('keyup', ({ keyCode }) => {
             break
     } //switch case statment
 })
+
