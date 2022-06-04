@@ -14,11 +14,11 @@
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 50px;
   height: 100%;
   width: 50%;
   opacity: 0;
-  transition: .5s ease;
+  transition: .2s;
   background-color: #0077ff;
 }
 
