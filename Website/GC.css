@@ -1,29 +1,33 @@
+body{
+  background-color:blue;
+}
+button{
+  width: 150px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background-color:rgb(165, 99, 0);
+  cursor: pointer;
+  position: right;
+  border:none;
+}
+.title{
+  font-family: sans-serif;
+  color: #000000;
+  align-items: center;
+  color: white;
+}
 .container {
   position: relative;
-  width: 50%;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
 }
 
 .image {
   display: block;
-  width: 50%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 50px;
-  height: 100%;
-  width: 50%;
-  opacity: 0;
-  transition: .2s;
-  background-color: #0077ff;
-}
-
-.container:hover .overlay {
-  opacity: 1;
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
 }
 
 .text {
@@ -32,19 +36,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-align: center;
 }
-
-button{
-  width: 150px;
-  height: 30px;
-  color: rgb(255, 255, 255);
-  background-color:#0077ff;
-  cursor: pointer;
-  position: relative;
-  top: -380px;
-  left: 1100px;
+.overlayFade{
+  height: 100%;
+  width:100%;
+  top: 0px;;
+  left:0;
+}
+.overlay {
+  position: absolute;
+  opacity: 0;
+  transition:all .10s ease;
+  background-color: #008cba;
+  margin-top: 30px;
+}
+.container:hover .overlayFade {
+  opacity: 1;
 }
