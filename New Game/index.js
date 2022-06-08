@@ -5,6 +5,7 @@ canvas.width = innerWidth
 canvas.height = innerHeight
 const gravity = 1
 
+
 class Player {
     constructor() {
         this.position = {
@@ -19,7 +20,7 @@ class Player {
         this.height = 45
     }
     draw() { //draw function
-        c.fillStyle ='white'
+        c.fillStyle = "yellow"
         c.fillRect(this.position.x, this.position.y,
             this.width, this.height)
     }
@@ -30,7 +31,6 @@ class Player {
 
         if(this.position.y + this.height + this.tempo.y <= canvas.height)
         this.tempo.y += gravity
-        else this.tempo.y = 0
     }
 }
 
@@ -44,23 +44,79 @@ class Plattform {
         this.height = 30
     }
     draw() {
-        c.fillStyle = "darkgreen"
+        c.fillStyle = "red"
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
-const player = new Player()
-const platforms = [new Plattform({x: 90, y: 500}),
+let player = new Player()
+let platforms = [new Plattform({x: 90, y: 500}),
     new Plattform({x: 500, y: 400 }), new Plattform({x: 800, y: 280 }),  new Plattform({x: 1120, y: 280 })
     ,  new Plattform({x: 1520, y: 500 }), new Plattform({x: 1720, y: 400 }), new Plattform({x: 1900, y: 280 }), new Plattform({x: 2200, y: 200 }),
     new Plattform({x: 2600, y: 450 })]
-const keys = {
-    rechts: {
-        pressed: false
-    },
-    links: {
-        pressed: false
-    },
+    const keys = {
+        rechts: {
+            pressed: false
+        },
+        links: {
+            pressed: false
+        },
+    }
 
+let scrollOffset = 0
+
+function Init() {
+
+
+
+class Player {
+    constructor() {
+        this.position = {
+            x: 90,
+            y: 10
+        }
+        this.tempo = {
+            x:0,
+            y:0
+        }
+        this.width = 45
+        this.height = 45
+    }
+    draw() { //draw function
+        c.fillStyle ='red'
+        c.fillRect(this.position.x, this.position.y,
+            this.width, this.height)
+    }
+    update() { //update function
+        this.draw()
+        this.position.x += this.tempo.x
+        this.position.y += this.tempo.y
+
+        if(this.position.y + this.height + this.tempo.y <= canvas.height)
+        this.tempo.y += gravity
+    }
+}
+
+class Plattform {
+    constructor({x, y}) {
+        this.position = {
+            x: x,
+            y: y
+        }
+        this.width = 190
+        this.height = 30
+    }
+    draw() {
+        c.fillStyle = "yellow"
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+}
+player = new Player()
+platforms = [new Plattform({x: 90, y: 500}),
+    new Plattform({x: 500, y: 400 }), new Plattform({x: 800, y: 280 }),  new Plattform({x: 1120, y: 280 })
+    ,  new Plattform({x: 1520, y: 500 }), new Plattform({x: 1720, y: 400 }), new Plattform({x: 1900, y: 280 }), new Plattform({x: 2200, y: 200 }),
+    new Plattform({x: 2600, y: 450 })]
+
+scrollOffset = 0
 }
 
 
@@ -80,11 +136,13 @@ function animate() {
         player.tempo.x = 0
 
         if (keys.rechts.pressed) {
+            scrollOffset += 5
             platforms.forEach(plattform => {
                 plattform.position.x -= 5
             })
 
         }else if (keys.links.pressed) {
+            scrollOffset -= 5
             platforms.forEach(plattform => {
                 plattform.position.x += 5
             })
@@ -100,7 +158,16 @@ function animate() {
         player.tempo.y = 0
     }
 })
+// condition fürs gewinnen
+if (scrollOffset > 2000) {
+    console.log('Du hast gewonnen!')
 }
+// condition fürs verlieren
+if (player.position.y > canvas.height){
+    Init()
+}
+}
+
 animate()
 
 addEventListener('keydown', ({ keyCode }) => {
