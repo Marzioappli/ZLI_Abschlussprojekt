@@ -3,7 +3,7 @@ const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
 canvas.height = innerHeight
-const gravity = 1
+const gravity = 0.8
 
 
 class Player {
@@ -20,7 +20,7 @@ class Player {
         this.height = 45
     }
     draw() { //draw function
-        c.fillStyle = "yellow"
+        c.fillStyle = "red"
         c.fillRect(this.position.x, this.position.y,
             this.width, this.height)
     }
@@ -44,15 +44,16 @@ class Plattform {
         this.height = 30
     }
     draw() {
-        c.fillStyle = "red"
+        c.fillStyle = "yellow"
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
 let player = new Player()
+let lastPlatform = new Plattform({x: 2600, y: 450 });
 let platforms = [new Plattform({x: 90, y: 500}),
     new Plattform({x: 500, y: 400 }), new Plattform({x: 800, y: 280 }),  new Plattform({x: 1120, y: 280 })
     ,  new Plattform({x: 1520, y: 500 }), new Plattform({x: 1720, y: 400 }), new Plattform({x: 1900, y: 280 }), new Plattform({x: 2200, y: 200 }),
-    new Plattform({x: 2600, y: 450 })]
+    lastPlatform]
     const keys = {
         rechts: {
             pressed: false
@@ -65,8 +66,6 @@ let platforms = [new Plattform({x: 90, y: 500}),
 let scrollOffset = 0
 
 function Init() {
-
-
 
 class Player {
     constructor() {
@@ -106,15 +105,16 @@ class Plattform {
         this.height = 30
     }
     draw() {
-        c.fillStyle = "yellow"
+        c.fillStyle ='yellow'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
 player = new Player()
-platforms = [new Plattform({x: 90, y: 500}),
+let lastPlatform = new Plattform({x: 2600, y: 450 });
+let platforms = [new Plattform({x: 90, y: 500}),
     new Plattform({x: 500, y: 400 }), new Plattform({x: 800, y: 280 }),  new Plattform({x: 1120, y: 280 })
     ,  new Plattform({x: 1520, y: 500 }), new Plattform({x: 1720, y: 400 }), new Plattform({x: 1900, y: 280 }), new Plattform({x: 2200, y: 200 }),
-    new Plattform({x: 2600, y: 450 })]
+    lastPlatform]
 
 scrollOffset = 0
 }
@@ -150,17 +150,22 @@ function animate() {
     }
 
     //plattform collision detection
-    platforms.forEach(plattform => {
-    if (player.position.y + player.height <= plattform.position.y
-        && player.position.y + player.height + player.tempo.y >= plattform.position.y
-        && player.position.x + player.width >= plattform.position.x
-        && player.position.x <= plattform.position.x + plattform.width) {// && = add statement (conditional)
-        player.tempo.y = 0
-    }
-})
+    let win = false;
+        platforms.forEach(plattform => {
+        if (player.position.y + player.height <= plattform.position.y
+            && player.position.y + player.height + player.tempo.y >= plattform.position.y
+            && player.position.x + player.width >= plattform.position.x
+            && player.position.x <= plattform.position.x + plattform.width && !win) {// && = add statement (conditional)
+            player.tempo.y = 0
+            if (plattform == lastPlatform) {
+                win = true;
+                alert("Level geschafft!")
+            }
+        }
+    })
 // condition fürs gewinnen
-if (scrollOffset > 2000) {
-    console.log('Du hast gewonnen!')
+if (scrollOffset > 2200) {
+    console.log('Du hast es geschafft! Ab zum nächsten Level')
 }
 // condition fürs verlieren
 if (player.position.y > canvas.height){
@@ -173,38 +178,29 @@ animate()
 addEventListener('keydown', ({ keyCode }) => {
     switch (keyCode) {
         case 37:
-            console.log('links')
             keys.links.pressed = true
             break
         case 38:
-            console.log('oben')
-            player.tempo.y -= 7
+            player.tempo.y -= 12
             break
         case 39:
-            console.log('rechts')
             keys.rechts.pressed = true
             break
         case 40:
-            console.log('unten')
             break
     } //switch case statment
 })
 addEventListener('keyup', ({ keyCode }) => {
     switch (keyCode) {
         case 37:
-            console.log('links')
             keys.links.pressed = false
             break
         case 38:
-            console.log('oben')
-            player.tempo.y -= 10
             break
         case 39:
-            console.log('rechts')
             keys.rechts.pressed = false
             break
         case 40:
-            console.log('unten')
             break
     } //switch case statment
 })
