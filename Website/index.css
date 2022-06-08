@@ -57,15 +57,45 @@ a {
     color: #009dff;
 }
 
+.responsive-button{
+    position:absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.responsive-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 400px){
+    .responsive-button{
+        display: flex;
+    }
+    .nav-link {
+        display: none;
+    }
+}
+
+img{
+    width: 180px;
+    height: 33px;
+}
 h1{
     text-align: center;
 }
 button{
     width: 150px;
     height: 30px;
-    color: black;
-    background-color:rgb(0, 200, 255);
-    border-color: pink;
+    color: rgb(0, 0, 0);
+    background-color:rgb(0, 217, 255);
+    border-color: blue;
     cursor: pointer;
 }
 li {

@@ -26,6 +26,7 @@ h1{
   height: 200px;
   display: inline-block;
   align-items: center;
+  overflow: cover;
 }
 
 .image {
@@ -34,6 +35,7 @@ h1{
   height: 200px;
   margin-top: 30px;
   align-items: center;
+  overflow: cover;
 }
 
 .text {
@@ -59,6 +61,7 @@ h1{
   background-color: blue;
   margin-top: 30px;
   align-items: center;
+  overflow: cover;
 }
 .container:hover .overlayFade {
   opacity: 1;
