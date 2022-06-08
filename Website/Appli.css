@@ -57,8 +57,8 @@ button{
     width: 150px;
     height: 30px;
     color: black;
-    background-color:beige;
-    border-color: #009dff;
+    background-color:rgb(0, 217, 255);
+    border-color: blue;
     cursor: pointer;
 }
 
@@ -78,7 +78,7 @@ li{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 p{
-    font-size: 15px;
+    font-size: 16px;
 }
 picture{
     display: flex;

@@ -2,7 +2,7 @@ body{
   background-color:blue;
 }
 button{
-  width: 150px;
+  width: 200px;
   height: 30px;
   color: rgb(255, 255, 255);
   background-color:rgb(165, 99, 0);
@@ -10,7 +10,11 @@ button{
   position: right;
   border:none;
 }
+h1{
+  align-items: center;
+}
 .title{
+  align-items: center;
   font-family: sans-serif;
   color: #000000;
   align-items: center;
@@ -21,6 +25,7 @@ button{
   width: 200px;
   height: 200px;
   display: inline-block;
+  align-items: center;
 }
 
 .image {
@@ -28,6 +33,7 @@ button{
   width: 200px;
   height: 200px;
   margin-top: 30px;
+  align-items: center;
 }
 
 .text {
@@ -37,19 +43,22 @@ button{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  align-items: center;
 }
 .overlayFade{
   height: 100%;
   width:100%;
   top: 0px;;
   left:0;
+  align-items: center;
 }
 .overlay {
   position: absolute;
   opacity: 0;
   transition:all .10s ease;
-  background-color: #008cba;
+  background-color: blue;
   margin-top: 30px;
+  align-items: center;
 }
 .container:hover .overlayFade {
   opacity: 1;
