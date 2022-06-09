@@ -1,94 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing: border-box;
 }
+body {
+    background-image: url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-html {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.header {
-    border-bottom: 1px solid #000000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-}
-
-
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-item {
-    margin-left: 5rem;
-}
-
-.nav-link {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #000000;
-}
-
-.nav-link:hover {
-    color: #009dff;
-}
-
-.responsive-button{
-    position:absolute;
-    top: .75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.responsive-button .bar{
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
-@media (max-width: 400px){
-    .responsive-button{
-        display: flex;
-    }
-    .nav-link {
-        display: none;
-    }
-}
-
-img{
-    width: 180px;
-    height: 33px;
-}
-h1{
-    text-align: center;
 }
 button{
     width: 150px;
@@ -97,23 +15,99 @@ button{
     background-color:rgb(0, 217, 255);
     border-color: blue;
     cursor: pointer;
+    position: center;
 }
-li {
-    font-size: 15px;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:rgb(0, 0, 0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.links li{
+    font-size: 1.1rem;
+    margin: 1rem;
+    list-style: none;
+}
+.links li a{
+    text-decoration: none;
     color: rgb(0, 0, 0);
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0.1rem;
+    display: block;
 }
+
+
+.responsive-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.responsive-button .res-bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+    .responsive-button {
+        display: flex;
+    }
+    .links {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .links li {
+        text-align: center;
+    }
+    .links li a {
+        padding: .5rem 1rem;
+    }
+    .links.active{
+        display: flex;
+    }
+}
+img{
+    width: 180px;
+    height: 33px;
+}
+h1{
+    text-align: center;
+}
+button{
+    width: 200px;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    background-color:rgb(0, 217, 255);
+    border-color: blue;
+    cursor: pointer;
+}
+
 p {
     font-size: 15px;
     color: rgb(0, 0, 0);
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-body {
-    background-image: url("Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 img{
     float: right;
 }
