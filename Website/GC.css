@@ -1,11 +1,11 @@
 body{
-  background-color:blue;
+  background-color:#0064b9;
 }
 button{
   width: 200px;
   height: 30px;
   color: rgb(255, 255, 255);
-  background-color:rgb(197, 119, 3);
+  background-color:#fd661a;
   cursor: pointer;
   position: right;
   border:none;
@@ -22,7 +22,7 @@ h1{
 }
 .container {
   position: relative;
-  width: 200px;
+  width: 100px;
   height: 200px;
   display: inline-block;
   align-items: center;
@@ -58,13 +58,13 @@ h1{
   position: absolute;
   opacity: 0;
   transition:all .10s ease;
-  background-color: blue;
+  background-color: #000000c3;
   margin-top: 30px;
   align-items: center;
   overflow: cover;
 }
 .container:hover .overlayFade {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 @media (max-width: 400px){

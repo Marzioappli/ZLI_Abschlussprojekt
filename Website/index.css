@@ -53,14 +53,14 @@ button{
     width: 30px;
     height: 21px;
 }
-.responsive-button .res-bar{
+.responsive-button .resp{
     height: 3px;
     width: 100%;
     background-color: white;
     border-radius: 10px;
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .responsive-button {
         display: flex;
     }

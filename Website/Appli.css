@@ -57,7 +57,7 @@ body {
     border-radius: 10px;
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .responsive-button {
         display: flex;
     }
@@ -65,6 +65,14 @@ body {
     .links {
         display: none;
         width: 100%;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .container-reverse{
+        flex-direction: column !important;
     }
 
     .navbar {
