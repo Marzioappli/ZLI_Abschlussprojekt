@@ -48,32 +48,106 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 const gravity = 0.8
-let level1 = [
-    new Plattform({ x: 90, y: 500 }),
-    new Plattform({ x: 500, y: 400 }), 
-    new Plattform({ x: 800, y: 280 }), 
-    new Plattform({ x: 1120, y: 280 }), 
-    new Plattform({ x: 1520, y: 500 }), 
-    new Plattform({ x: 1720, y: 400 }), 
-    new Plattform({ x: 1900, y: 280 }), 
-    new Plattform({ x: 2200, y: 200 }),
-    new Plattform({ x: 2600, y: 450 })
-];
-let level2 = [
-    new Plattform({ x: 90, y: 500 }),
-    new Plattform({ x: 1000, y: 400 })
-];
 
-let platforms = level1;
+
+const levels = [
+    [
+        new Plattform({ x: 90, y: 500 }),
+        new Plattform({ x: 400, y: 500 }),
+        new Plattform({ x: 700, y: 500 })
+    ],
+    [
+        new Plattform({ x: 90, y: 300 }),
+        new Plattform({ x: 450, y: 300 }),
+        new Plattform({ x: 800, y: 300 }),
+        new Plattform({ x: 1120, y: 300 })
+    ],
+    [
+        new Plattform({ x: 90, y: 300 }),
+        new Plattform({ x: 450, y: 300 }),
+        new Plattform({ x: 800, y: 480 }),
+        new Plattform({ x: 1020, y: 380 }),
+        new Plattform({ x: 1250, y: 450 })
+    ],
+    [
+        new Plattform({ x: 90, y: 500 }),
+        new Plattform({ x: 500, y: 400 }),
+        new Plattform({ x: 800, y: 280 }),
+        new Plattform({ x: 1120, y: 210 }),
+        new Plattform({ x: 1420, y: 150 }),
+        new Plattform({ x: 1820, y: 450 })
+    ],
+    [
+        new Plattform({ x: 90, y: 500 }),
+        new Plattform({ x: 500, y: 400 }),
+        new Plattform({ x: 800, y: 280 }),
+        new Plattform({ x: 1120, y: 280 }),
+        new Plattform({ x: 1520, y: 500 }),
+        new Plattform({ x: 1720, y: 400 }),
+        new Plattform({ x: 1900, y: 280 }),
+        new Plattform({ x: 2200, y: 200 }),
+        new Plattform({ x: 2600, y: 450 })
+    ],
+    [
+        new Plattform({ x: 90, y: 100 }),
+        new Plattform({ x: 500, y: 200 }),
+        new Plattform({ x: 800, y: 300 }),
+        new Plattform({ x: 1120, y: 480 }),
+        new Plattform({ x: 1520, y: 480 }),
+        new Plattform({ x: 1720, y: 350 }),
+        new Plattform({ x: 1900, y: 280 }),
+        new Plattform({ x: 2200, y: 200 }),
+        new Plattform({ x: 2400, y: 160 })
+    ],
+    [
+        new Plattform({ x: 90, y: 540 }),
+        new Plattform({ x: 400, y: 450 }),
+        new Plattform({ x: 700, y: 400 }),
+        new Plattform({ x: 900, y: 350 }),
+        new Plattform({ x: 960, y: 350 }),
+        new Plattform({ x: 1000, y: 350 }),
+        new Plattform({ x: 1100, y: 350 }),
+        new Plattform({ x: 1400, y: 300 }),
+        new Plattform({ x: 1600, y: 500 })
+    ],
+    [
+        new Plattform({ x: 90, y: 300 }),
+        new Plattform({ x: 450, y: 400 }),
+        new Plattform({ x: 800, y: 300 }),
+        new Plattform({ x: 1120, y: 400 }),
+        new Plattform({ x: 1350, y: 300 }),
+        new Plattform({ x: 1520, y: 300 })
+    ],
+    [
+        new Plattform({ x: 90, y: 500 }),
+        new Plattform({ x: 450, y: 500 }),
+        new Plattform({ x: 800, y: 450 }),
+        new Plattform({ x: 1020, y: 380 }),
+        new Plattform({ x: 1250, y: 250 }),
+        new Plattform({ x: 1300, y: 400 }),
+        new Plattform({ x: 1500, y: 350 }),
+        new Plattform({ x: 1700, y: 450 })
+    ],
+    [
+        new Plattform({ x: 90, y: 100 }),
+        new Plattform({ x: 280, y: 130 }),
+        new Plattform({ x: 470, y: 160 }),
+        new Plattform({ x: 660, y: 190 }),
+        new Plattform({ x: 470, y:  450  }),
+        new Plattform({ x: 930, y: 290 }),
+        new Plattform({ x: 740, y: 320 }),
+        new Plattform({ x:1120, y: 260}),
+    ]
+]
+
+
+let currentLevel = 0;
+
+let platforms = levels[currentLevel];
 let player = new Player();
 let win = false;
-    
 
-//let lastPlatform = new Plattform({ x: 2600, y: 450 });
-// let platforms = [new Plattform({ x: 90, y: 500 }),
-// new Plattform({ x: 500, y: 400 }), new Plattform({ x: 800, y: 280 }), new Plattform({ x: 1120, y: 280 })
-//     , new Plattform({ x: 1520, y: 500 }), new Plattform({ x: 1720, y: 400 }), new Plattform({ x: 1900, y: 280 }), new Plattform({ x: 2200, y: 200 }),
-//     lastPlatform]
+
 const keys = {
     rechts: {
         pressed: false
@@ -85,15 +159,19 @@ const keys = {
 
 let scrollOffset = 0
 
-function Init() {
+function initializePlayer() {
     player = new Player()
     scrollOffset = 0
 }
 
 function animate() {
-    if(win) {     
+    if (win) {
         alert("Level geschafft!")
-        return;
+        currentLevel++;
+        platforms = levels[currentLevel];
+        win = false;
+        initializePlayer()
+
     }
 
     requestAnimationFrame(animate)
@@ -102,6 +180,8 @@ function animate() {
     platforms.forEach(plattform => {
         plattform.draw()
     })
+
+    console.log(player)
 
     if (keys.rechts.pressed && player.position.x < 500) {
         player.tempo.x = 5
@@ -130,7 +210,7 @@ function animate() {
         if (player.position.y + player.height <= plattform.position.y
             && player.position.y + player.height + player.tempo.y >= plattform.position.y
             && player.position.x + player.width >= plattform.position.x
-            && player.position.x <= plattform.position.x + plattform.width && !win) {// && = add statement (conditional)
+            && player.position.x <= plattform.position.x + plattform.width) {// && = add statement (conditional)
             player.tempo.y = 0
             if (i + 1 == platforms.length) {
                 win = true;
@@ -143,7 +223,7 @@ function animate() {
     }
     // condition fürs verlieren
     if (player.position.y > canvas.height) {
-        Init()
+        initializePlayer()
     }
 }
 
