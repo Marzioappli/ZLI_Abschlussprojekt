@@ -52,8 +52,13 @@ button{
     width: 200px;
     height: 30px;
     color: rgb(255, 255, 255);
-    background-color:rgb(0, 0, 0);
+    background-color:green;
     cursor: pointer;
     position: right;
     border:none;
+}
+@media (max-width: 400px){
+    button{
+        margin-left: 90px;
+    }
 }

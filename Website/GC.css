@@ -5,7 +5,7 @@ button{
   width: 200px;
   height: 30px;
   color: rgb(255, 255, 255);
-  background-color:rgb(165, 99, 0);
+  background-color:rgb(197, 119, 3);
   cursor: pointer;
   position: right;
   border:none;
@@ -65,4 +65,10 @@ h1{
 }
 .container:hover .overlayFade {
   opacity: 1;
+}
+
+@media (max-width: 400px){
+  button{
+      margin-left: 90px;
+  }
 }

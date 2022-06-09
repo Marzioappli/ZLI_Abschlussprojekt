@@ -7,10 +7,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+
 }
 
 
@@ -101,6 +98,12 @@ body {
 
     .container .text {
         margin-top: 50px;
+    }
+    body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }
 
