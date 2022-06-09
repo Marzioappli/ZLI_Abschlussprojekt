@@ -55,6 +55,7 @@ const levels = [
         new Plattform({ x: 90, y: 500 }),
         new Plattform({ x: 400, y: 500 }),
         new Plattform({ x: 700, y: 500 })
+
     ],
     [
         new Plattform({ x: 90, y: 300 }),
@@ -124,9 +125,9 @@ const levels = [
         new Plattform({ x: 800, y: 450 }),
         new Plattform({ x: 1020, y: 380 }),
         new Plattform({ x: 1250, y: 250 }),
-        new Plattform({ x: 1300, y: 400 }),
+        new Plattform({ x: 1700, y: 450 }),
         new Plattform({ x: 1500, y: 350 }),
-        new Plattform({ x: 1700, y: 450 })
+        new Plattform({ x: 1250, y: 480 })
     ],
     [
         new Plattform({ x: 90, y: 100 }),
@@ -164,15 +165,23 @@ function initializePlayer() {
     scrollOffset = 0
 }
 
-function animate() {
-    if (win) {
-        alert("Level geschafft!")
-        currentLevel++;
-        platforms = levels[currentLevel];
-        win = false;
-        initializePlayer()
+function champion()
+{
+    alert("Level erfolgreich absolviert! Ab zum nächsten!")
+    currentLevel++;
+    platforms = levels[currentLevel];
+    win = false;
 
+    if(platforms) {
+
+        initializePlayer()
+    } else {
+        window.location.href="./Erklärung/index.html"
     }
+
+}
+function animate() {
+    if (win) champion()
 
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height)
