@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     background-image: url("./../Bilder/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp");
     background-position: center;
@@ -9,54 +10,57 @@ body {
     min-height: 110vh;
 
 }
+
 h1 {
     text-align: center;
     color: rgb(0, 0, 0);
     margin-bottom: 90px;
-    font-size:xx-large;
+    font-size: xx-large;
 }
 
 
-button{
+button {
     width: 150px;
     height: 30px;
     color: rgb(0, 0, 0);
-    background-color:rgb(0, 217, 255);
+    background-color: rgb(0, 217, 255);
     border-color: blue;
     cursor: pointer;
     position: center;
 }
 
-.img{
+.img {
     position: absolute;
     top: 200px;
     bottom: 100px;
     left: 10px;
     right: 10px;
-    margin: .5rem;
+    margin: .7rem;
     display: flex;
     justify-content: space-around;
-    }
+}
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:rgb(0, 0, 0);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-.links ul{
+.links ul {
     margin: 0;
     padding: 0;
     display: flex;
 }
-.links li{
+
+.links li {
     font-size: 1.1rem;
     margin: 1rem;
     list-style: none;
 }
-.links li a{
+
+.links li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     padding: 0.1rem;
@@ -64,7 +68,7 @@ button{
 }
 
 
-.responsive-button{
+.responsive-button {
     position: absolute;
     top: .75rem;
     right: 1rem;
@@ -74,7 +78,8 @@ button{
     width: 30px;
     height: 21px;
 }
-.responsive-button .res-bar{
+
+.responsive-button .res-bar {
     height: 3px;
     width: 100%;
     background-color: white;
@@ -85,28 +90,35 @@ button{
     .responsive-button {
         display: flex;
     }
+
     .links {
         display: none;
         width: 100%;
     }
+
     .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
-    .links ul{
+
+    .links ul {
         width: 100%;
         flex-direction: column;
     }
+
     .links li {
         text-align: center;
     }
+
     .links li a {
         padding: .5rem 1rem;
     }
-    .links.active{
+
+    .links.active {
         display: flex;
     }
-    .img{
+
+    .img {
         display: flex;
         flex-direction: column;
         align-items: center;

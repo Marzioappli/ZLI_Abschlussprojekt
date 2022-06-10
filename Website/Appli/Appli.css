@@ -67,11 +67,11 @@ body {
         width: 100%;
     }
 
-    .container{
+    .container {
         flex-direction: column;
     }
 
-    .container-reverse{
+    .container-reverse {
         flex-direction: column !important;
     }
 
@@ -107,7 +107,8 @@ body {
     .container .text {
         margin-top: 50px;
     }
-    body{
+
+    body {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
