@@ -9,7 +9,7 @@ class Player {
       y: 0,
     };
     this.width = 45;
-    this.height = 45;
+    this.height = 50;
   }
   draw(scrollOffset = 0) {
     //draw function
