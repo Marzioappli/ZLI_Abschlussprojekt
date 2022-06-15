@@ -62,7 +62,7 @@ const levels = [
   [
     new Plattform({ x: 90, y: 500 }),
     new Plattform({ x: 400, y: 500 }),
-    new Plattform({ x: 700, y: 500 }),
+    new Plattform({ x: 700, y: 500 })
   ],
   [
     new Plattform({ x: 90, y: 300 }),
@@ -97,8 +97,8 @@ const levels = [
     new Plattform({ x: 2600, y: 450 }),
   ],
   [
-    new Plattform({ x: 90, y: 100 }),
-    new Plattform({ x: 500, y: 200 }),
+    new Plattform({ x: 90, y: 150 }),
+    new Plattform({ x: 400, y: 200 }),
     new Plattform({ x: 800, y: 300 }),
     new Plattform({ x: 1120, y: 480 }),
     new Plattform({ x: 1520, y: 480 }),
