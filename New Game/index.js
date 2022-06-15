@@ -205,9 +205,6 @@ function animate() {
   platforms.forEach((plattform) => {
     plattform.draw(scrollOffset);
   });
-
-
-
   if (keys.rechts.pressed && player.position.x -scrollOffset < 800) {
     player.tempo.x = 5;
   } else if (keys.links.pressed && player.position.x -scrollOffset > 200) {
@@ -219,7 +216,7 @@ function animate() {
     player.tempo.x = 5;
       scrollOffset += 5;
     } else if (keys.links.pressed) {
-    player.tempo.x = 5; 
+    player.tempo.x = 5;
       scrollOffset -= 5;
     }
   }
@@ -235,7 +232,6 @@ function animate() {
       }
     }
   });
-  // condition fürs gewinnen
 
   // condition fürs verlieren
   if (player.position.y > canvas.height) {
