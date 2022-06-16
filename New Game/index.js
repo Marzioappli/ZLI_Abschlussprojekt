@@ -1,3 +1,7 @@
+
+const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+
 class Player {
   constructor() {
     this.position = {
@@ -14,7 +18,7 @@ class Player {
   draw(scrollOffset = 0) {
     //draw function
     c.fillStyle = "red";
-    const positionXOnScreen = this.position.x - scrollOffset;
+    const Respawn = this.position.x - scrollOffset;
     c.fillRect(this.position.x - scrollOffset, this.position.y, this.width, this.height);
   }
   update() {
@@ -51,8 +55,6 @@ class Plattform {
   }
 }
 
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -207,7 +209,7 @@ function animate() {
   });
   if (keys.rechts.pressed && player.position.x -scrollOffset < 800) {
     player.tempo.x = 5;
-  } else if (keys.links.pressed && player.position.x -scrollOffset > 200) {
+  } else if (keys.links.pressed && player.position.x -scrollOffset > 100) {
     player.tempo.x = -5;
   } else {
     player.tempo.x = 0;
