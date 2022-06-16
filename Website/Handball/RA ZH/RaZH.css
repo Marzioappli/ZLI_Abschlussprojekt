@@ -69,4 +69,10 @@ button {
     button {
         margin-left: 90px;
     }
+    image {
+        display: block;
+        width: 200px;
+        height: 300px;
+        margin-top: 30px
+    }
 }
