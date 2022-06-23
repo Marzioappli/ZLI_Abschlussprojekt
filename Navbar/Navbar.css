@@ -22,7 +22,7 @@ button {
 
 .links ul {
     margin: 0;
-    padding: 0;
+    padding: 0; /* Innenstab eines Elementes */
     display: flex;
 }
 

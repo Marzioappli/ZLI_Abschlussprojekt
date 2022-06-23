@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Select all elements*/
 }
 
 body {
@@ -44,7 +44,7 @@ body {
     top: .75rem;
     right: 1rem;
     display: none;
-    flex-direction: column;
+    flex-direction: column; /* richtet gleich hohe Blöcke ein*/
     justify-content: space-between;
     width: 30px;
     height: 21px;
@@ -71,7 +71,7 @@ body {
         flex-direction: column;
     }
 
-    .container-reverse {
+    .reverse {
         flex-direction: column !important;
     }
 
@@ -148,6 +148,6 @@ picture {
     margin: 16px;
 }
 
-.container-reverse {
+.reverse {
     flex-direction: row-reverse;
 }

@@ -3,7 +3,7 @@ const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 
 class Player {
-  constructor() {
+  constructor() { // Objektinstanz einer Klasse wird erzeugt und initialisiert
     this.position = {
       x: 90,
       y: 10,
@@ -58,11 +58,11 @@ class Plattform {
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
-const gravity = 0.8;
+const gravity = 0.8;  // Gravitation
 
 const levels = [
   [
-    new Plattform({ x: 90, y: 500 }),
+    new Plattform({ x: 90, y: 500 }),  //neue Plattformen
     new Plattform({ x: 400, y: 500 }),
     new Plattform({ x: 700, y: 500 })
   ],
@@ -216,18 +216,18 @@ function animate() {
 
     if (keys.rechts.pressed) {
     player.tempo.x = 5;
-      scrollOffset += 5;
+      scrollOffset += 5; // += ist eine addition
     } else if (keys.links.pressed) {
     player.tempo.x = 5;
-      scrollOffset -= 5;
+      scrollOffset -= 5; // -= ist eine subtraktion
     }
   }
 
-  //plattform collision detection
+  //plattform collision detection (Kollisionserkennung)
 
   platforms.forEach((plattform, i) => {
     if (plattform.collidesWith(player, scrollOffset)) {
-      // && = add statement (conditional)
+      // && = add statement (conditional --> bedingt)
       player.tempo.y = 0;
       if (i + 1 == platforms.length) {
         win = true;
